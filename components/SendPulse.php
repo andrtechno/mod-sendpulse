@@ -30,6 +30,9 @@ class SendPulse extends \yii\base\Component
         if (!isset($task['ttl']))
             $task['ttl'] = $this->config->push_ttl;
 
+        if (!isset($additionalParams['link']))
+            $additionalParams['link'] = Yii::$app->request->hostInfo;
+
         return $this->api->createPushTask($task, $additionalParams);
     }
 

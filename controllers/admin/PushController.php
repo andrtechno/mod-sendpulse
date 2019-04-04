@@ -76,20 +76,20 @@ class PushController extends AdminController
             if (!empty($model->send_date)) {
                 $additionalParams['send_date'] = $model->send_date;
             }
-            $additionalParams['buttons'] = Json::encode([
-                ['text' => 'asad', 'link' => 'sss'],
-                ['text' => 'asad1111', 'link' => 'sss11']
-            ]);
+            /* $additionalParams['buttons'] = Json::encode([
+                 ['text' => 'asad', 'link' => 'sss'],
+                 ['text' => 'asad1111', 'link' => 'sss11']
+             ]);*/
             $additionalParams['icon'] = Json::encode(['name' => 'icon.png', 'data' => base64_encode(file_get_contents($file))]);
 
 
             $response = Yii::$app->sendpulse->push($task, $additionalParams);
             if (isset($response->is_error)) {
-                Yii::$app->session->setFlash('error', Yii::t('sendpulse/error',$response->error_code));
+                Yii::$app->session->setFlash('error', Yii::t('sendpulse/error', $response->error_code));
             } else {
                 Yii::$app->session->setFlash('success', Yii::t('app', 'SUCCESS_SEND'));
             }
-            return Yii::$app->getResponse()->redirect(['/admin/sendpulse/push/create']);
+            return Yii::$app->response->redirect(['/admin/sendpulse/push/create']);
 
         }
         return $this->render('create', ['model' => $model]);
