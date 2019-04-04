@@ -1,22 +1,24 @@
 <?php
+use panix\engine\Html;
+
 echo yii\grid\GridView::widget([
     'dataProvider' => $provider,
     'columns' => [
         'id',
-       /* [
-            'attribute' => 'website_id',
-            'format' => 'html',
-            'value' => function ($data) {
-                return \panix\engine\Html::a($data['website_id'],['/admin/sendpulse/push/subscriptions','id'=>$data['website_id']]);
-            },
-        ],
-        [
-            'attribute' => 'id',
-            'format' => 'html',
-            'value' => function ($data) {
-                return \panix\engine\Html::a($data['id'],['/admin/sendpulse/push/view','id'=>$data['id']]);
-            },
-        ],*/
+        /* [
+             'attribute' => 'website_id',
+             'format' => 'html',
+             'value' => function ($data) {
+                 return \panix\engine\Html::a($data['website_id'],['/admin/sendpulse/push/subscriptions','id'=>$data['website_id']]);
+             },
+         ],
+         [
+             'attribute' => 'id',
+             'format' => 'html',
+             'value' => function ($data) {
+                 return \panix\engine\Html::a($data['id'],['/admin/sendpulse/push/view','id'=>$data['id']]);
+             },
+         ],*/
         [
             'attribute' => 'country_code',
             'format' => 'html',
@@ -28,7 +30,7 @@ echo yii\grid\GridView::widget([
             'attribute' => 'os',
             'format' => 'html',
             'value' => function ($data) {
-                return '<strong>' . $data['os'] . '</strong><br/>' . $data['browser'].'<br/>' . $data['lang'];
+                return '<strong>' . $data['os'] . '</strong><br/>' . $data['browser'] . '<br/>' . $data['lang'];
             },
         ],
         [
@@ -47,5 +49,17 @@ echo yii\grid\GridView::widget([
                 return \panix\mod\sendpulse\components\SendPulseHelper::pushSubscriptionsStatus($data['status']);
             },
         ],
+        [
+            'class' => 'yii\grid\ActionColumn',
+            'template' => '{active} {deactive}',  // the default buttons + your custom button
+            'buttons' => [
+                'active' => function ($url, $model, $key) {     // render your custom button
+                    return Html::a('active', ['s']);
+                },
+                'deactive' => function ($url, $model, $key) {     // render your custom button
+                    return Html::a('deactive', ['s']);
+                }
+            ]
+        ]
     ]
 ]);

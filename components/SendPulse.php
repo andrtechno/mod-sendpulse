@@ -15,7 +15,7 @@ class SendPulse extends \yii\base\Component
     public function __construct($config = [])
     {
         $this->config = Yii::$app->settings->get('sendpulse');
-        $this->api = new ApiClient($this->config->api_id, $this->config->api_secret, new FileStorage(Yii::getAlias('@runtime/sendpulse')));
+        $this->api = new ApiClient($this->config->api_id, $this->config->api_secret, new FileStorage(Yii::getAlias('@runtime/')));
         parent::__construct($config);
     }
 
@@ -28,7 +28,7 @@ class SendPulse extends \yii\base\Component
             $task['stretch_time'] = 0;
 
         if (!isset($task['ttl']))
-            $task['ttl'] = 20;
+            $task['ttl'] = $this->config->push_ttl;
 
         return $this->api->createPushTask($task, $additionalParams);
     }
