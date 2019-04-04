@@ -31,7 +31,8 @@ class Module extends WebModule implements BootstrapInterface
                 'items' => [
                     [
                         'label' => Yii::t('sendpulse/default', 'MODULE_NAME'),
-                        'url' => ['/admin/pages'],
+                        'url' => ['/admin/sendpulse'],
+                        'url' => '#',
                         'icon' => $this->icon,
                     ],
                 ],
