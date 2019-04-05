@@ -9,8 +9,10 @@ use yii\helpers\Json;
 use panix\engine\controllers\AdminController;
 use yii\data\ArrayDataProvider;
 
-class PushController extends AdminController
+class DefaultController extends AdminController
 {
+    public $icon = 'notification';
+
     public function actionIndex()
     {
         $this->pageName = Yii::t('sendpulse/default', 'MODULE_NAME');
@@ -18,7 +20,7 @@ class PushController extends AdminController
         $this->buttons = [
             [
                 'label' => Yii::t('sendpulse/default', 'SEND_PUSH'),
-                'url' => ['/admin/sendpulse/push/create'],
+                'url' => ['/admin/sendpulse/default/create'],
                 'icon' => 'icon-notification',
                 'options' => ['class' => 'btn btn-success']
             ]
@@ -59,7 +61,7 @@ class PushController extends AdminController
         $this->pageName = Yii::t('sendpulse/default', 'PUSH');
         $this->breadcrumbs[] = [
             'label'=>Yii::t('sendpulse/default', 'MODULE_NAME'),
-            'url'=>['/admin/sendpulse/push']
+            'url'=>['/admin/sendpulse/default']
         ];
         $this->breadcrumbs[] = $this->pageName;
 
@@ -74,7 +76,7 @@ class PushController extends AdminController
         $this->pageName = Yii::t('sendpulse/default', 'PUSH');
         $this->breadcrumbs[] = [
             'label'=>Yii::t('sendpulse/default', 'MODULE_NAME'),
-            'url'=>['/admin/sendpulse/push']
+            'url'=>['/admin/sendpulse/default']
         ];
         $this->breadcrumbs[] = $this->pageName;
 
@@ -113,7 +115,7 @@ class PushController extends AdminController
             } else {
                 Yii::$app->session->setFlash('success', Yii::t('app', 'SUCCESS_SEND'));
             }
-            return Yii::$app->response->redirect(['/admin/sendpulse/push/create']);
+            return Yii::$app->response->redirect(['/admin/sendpulse/default/create']);
 
         }
         return $this->render('create', ['model' => $model]);
@@ -127,7 +129,7 @@ class PushController extends AdminController
         $this->pageName = Yii::t('sendpulse/default', 'SUBSCRIPTIONS');
         $this->breadcrumbs[] = [
             'label'=>Yii::t('sendpulse/default', 'MODULE_NAME'),
-            'url'=>['/admin/sendpulse/push']
+            'url'=>['/admin/sendpulse/default']
         ];
         $this->breadcrumbs[] = $this->pageName;
 

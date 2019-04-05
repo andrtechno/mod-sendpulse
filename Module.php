@@ -11,12 +11,6 @@ class Module extends WebModule implements BootstrapInterface
 
     public function bootstrap($app)
     {
-        $app->urlManager->addRules(
-            [
-                'sendpulse' => 'sendpulse/default/index',
-            ],
-            false
-        );
         $config = $app->settings->get('sendpulse');
         if ($config->api_id && $config->api_secret)
             $app->setComponents([
@@ -31,8 +25,7 @@ class Module extends WebModule implements BootstrapInterface
                 'items' => [
                     [
                         'label' => Yii::t('sendpulse/default', 'MODULE_NAME'),
-                        'url' => ['/admin/sendpulse'],
-                        'url' => '#',
+                        'url' => ['/admin/sendpulse/default'],
                         'icon' => $this->icon,
                     ],
                 ],
@@ -48,7 +41,7 @@ class Module extends WebModule implements BootstrapInterface
             'version' => '1.0',
             'icon' => $this->icon,
             'description' => Yii::t('sendpulse/default', 'MODULE_DESC'),
-            'url' => ['/admin/sendpulse'],
+            'url' => ['/admin/sendpulse/default'],
         ];
     }
 

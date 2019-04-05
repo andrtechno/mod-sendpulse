@@ -9,7 +9,7 @@ $form = ActiveForm::begin([
 ?>
 <div class="card bg-light">
     <div class="card-header">
-        <?= $this->context->pageName ?>
+        <h5><?= $this->context->pageName ?></h5>
     </div>
     <div class="card-body">
         <?= $form->field($model, 'api_id')->textInput(['maxlength'=>32]); ?>
