@@ -1,12 +1,5 @@
 <?php
-
-/**
- *
- * @author PIXELION CMS development team <dev@pixelion.com.ua>
- * @link http://pixelion.com.ua PIXELION CMS
- */
-
-namespace panix\mod\sendpulse\assets;
+namespace panix\mod\sendpulse;
 
 use panix\engine\web\AssetBundle;
 use yii\web\View;
@@ -14,7 +7,7 @@ use Yii;
 
 class SendpulseAsset extends AssetBundle {
 
-    public $sourcePath = __DIR__;
+    public $sourcePath = __DIR__.'/assets';
 
     public $js = [
         '//cdn.sendpulse.com/js/push/3e9c33d0f25795d8e0a72d77af9e38c6_0.js'
