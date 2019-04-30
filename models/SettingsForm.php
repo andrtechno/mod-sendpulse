@@ -7,7 +7,7 @@ use panix\engine\SettingsModel;
 class SettingsForm extends SettingsModel
 {
 
-    protected $category = 'sendpulse';
+    public static $category = 'sendpulse';
     protected $module = 'sendpulse';
     public $api_id;
     public $api_secret;

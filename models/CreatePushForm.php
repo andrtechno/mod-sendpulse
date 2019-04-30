@@ -8,7 +8,7 @@ use panix\engine\base\Model;
 class CreatePushForm extends Model
 {
 
-    protected $category = 'sendpulse';
+    public static $category = 'sendpulse';
     protected $module = 'sendpulse';
     public $title;
     public $body;
