@@ -17,7 +17,7 @@ class PushTemplateSearch extends PushTemplate {
     public function rules() {
         return [
             [['id','views'], 'integer'],
-            [['name','seo_alias','date_create'], 'safe'],
+            [['name','slug','date_create'], 'safe'],
         ];
     }
 
