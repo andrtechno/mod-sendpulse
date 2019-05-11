@@ -18,7 +18,7 @@ The preferred way to install this extension is through [Composer](http://getcomp
 
 Either run
 
-``` php composer.phar require panix/mod-sendpulse "dev-master" ```
+``` php composer require panix/mod-sendpulse "dev-master" ```
 
 or add
 
