@@ -21,7 +21,7 @@ class DefaultController extends AdminController
             [
                 'label' => Yii::t('sendpulse/default', 'SEND_PUSH'),
                 'url' => ['/admin/sendpulse/default/create'],
-                'icon' => 'icon-notification',
+                'icon' => 'notification',
                 'options' => ['class' => 'btn btn-success']
             ]
         ];
