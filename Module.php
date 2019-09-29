@@ -12,10 +12,12 @@ class Module extends WebModule implements BootstrapInterface
     public function bootstrap($app)
     {
         $config = $app->settings->get('sendpulse');
-        if ($config->api_id && $config->api_secret)
-            $app->setComponents([
-                'sendpulse' => ['class' => 'panix\mod\sendpulse\components\SendPulse'],
-            ]);
+        if ($config) {
+            if ($config->api_id && $config->api_secret)
+                $app->setComponents([
+                    'sendpulse' => ['class' => 'panix\mod\sendpulse\components\SendPulse'],
+                ]);
+        }
     }
 
     public function getAdminMenu()
