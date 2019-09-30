@@ -34,11 +34,6 @@ class m170908_123150_push_templates extends Migration
             'button2_link' => $this->string(255)->null(),
 
         ], $tableOptions);
-
-
-        $this->createIndex('switch', PushTemplate::tableName(), 'switch');
-
-
     }
 
     public function down()

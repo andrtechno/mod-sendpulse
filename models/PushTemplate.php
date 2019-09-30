@@ -1,9 +1,9 @@
 <?php
 
-namespace panix\mod\pages\models;
+namespace panix\mod\sendpulse\models;
 
 use Yii;
-use app\models\User;
+use panix\engine\db\ActiveRecord;
 use panix\engine\behaviors\TranslateBehavior;
 use panix\mod\pages\models\PagesTranslate;
 use panix\mod\pages\models\PagesQuery;
@@ -14,7 +14,7 @@ use panix\mod\pages\models\PagesQuery;
  * @property integer $id
  * @property string $name
  */
-class PushTemplate extends \panix\engine\db\ActiveRecord {
+class PushTemplate extends ActiveRecord {
 
     const route = '/admin/pages/default';
     const MODULE_ID = 'sendpulse';
