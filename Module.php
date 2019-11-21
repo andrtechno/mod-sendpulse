@@ -6,6 +6,19 @@ use Yii;
 use panix\engine\WebModule;
 use yii\base\BootstrapInterface;
 
+/**
+ * Class Module
+ *
+ * Register js you layout
+ * <code>
+ * $this->registerJsFile('//cdn.sendpulse.com/js/push/XXXXXX.js',[
+ *      'position' => \yii\web\View::POS_HEAD,
+ *      'charset' => Yii::$app->charset,
+ *      'async' => 'async'
+ * ])
+ * </code>
+ * @package panix\mod\sendpulse
+ */
 class Module extends WebModule implements BootstrapInterface
 {
 
