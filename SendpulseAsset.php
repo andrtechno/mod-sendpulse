@@ -1,11 +1,17 @@
 <?php
+
 namespace panix\mod\sendpulse;
 
 use panix\engine\web\AssetBundle;
 use yii\web\View;
 use Yii;
 
-class SendpulseAsset extends AssetBundle {
+/**
+ * Class SendpulseAsset
+ * @package panix\mod\sendpulse
+ */
+class SendpulseAsset extends AssetBundle
+{
 
     //public $sourcePath = __DIR__.'/assets';
 
@@ -16,10 +22,10 @@ class SendpulseAsset extends AssetBundle {
     public function init()
     {
         parent::init();
-        $this->jsOptions=[
+        $this->jsOptions = [
             'position' => View::POS_HEAD,
-            'charset'=>Yii::$app->charset,
-            'async'=>'async'
+            'charset' => Yii::$app->charset,
+            'async' => 'async'
         ];
 
     }
