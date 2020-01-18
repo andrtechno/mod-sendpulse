@@ -94,7 +94,7 @@ class PushTemplate extends ActiveRecord {
             ['slug', '\panix\engine\validators\UrlValidator','attributeCompare'=>'name'],
             ['slug', 'match',
                 'pattern' => '/^([a-z0-9-])+$/i',
-                'message' => Yii::t('app','PATTERN_URL')
+                'message' => Yii::t('app/default','PATTERN_URL')
             ],
             [['date_update', 'date_create'], 'safe'],
                 //[['date_update'], 'date', 'format' => 'php:U']

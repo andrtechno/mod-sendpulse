@@ -23,7 +23,7 @@ $form = ActiveForm::begin([
         <?= $form->field($model, 'button2_link')->textInput(['maxlength'=>50])->hint('Данные функции работают не во всех браузерах (только Chrome/Chromium)'); ?>
     </div>
     <div class="card-footer text-center">
-        <?= Html::submitButton(Yii::t('app', 'SEND'), ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton(Yii::t('app/default', 'SEND'), ['class' => 'btn btn-success']) ?>
     </div>
 </div>
 <?php ActiveForm::end(); ?>

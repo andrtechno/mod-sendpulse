@@ -113,7 +113,7 @@ class DefaultController extends AdminController
             if (isset($response->is_error)) {
                 Yii::$app->session->setFlash('error', Yii::t('sendpulse/error', $response->error_code));
             } else {
-                Yii::$app->session->setFlash('success', Yii::t('app', 'SUCCESS_SEND'));
+                Yii::$app->session->setFlash('success', Yii::t('app/default', 'SUCCESS_SEND'));
             }
             return Yii::$app->response->redirect(['/admin/sendpulse/default/create']);
 
@@ -165,7 +165,7 @@ class DefaultController extends AdminController
     {
         return [
             [
-                'label' => Yii::t('app', 'SETTINGS'),
+                'label' => Yii::t('app/default', 'SETTINGS'),
                 'url' => array('/admin/sendpulse/settings'),
                 'icon' => 'icon-settings',
             ],
